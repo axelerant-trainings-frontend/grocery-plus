@@ -11,11 +11,9 @@ const contentfulClient = () => {
       const entries = await client.getEntries({
         content_type: "product",
       });
-      const sanitizedEntries = entries.items.map(
-        (item: Entry<FieldItem> | any) => {
-          return { ...item.fields, id: item.sys.id };
-        }
-      );
+      const sanitizedEntries = entries.items.map((item: Entry<FieldItem>) => {
+        return { ...item.fields, id: item.sys.id };
+      });
       return sanitizedEntries;
     } catch (error) {
       console.log(`Error fetching Products: ${error}`);
