@@ -20,7 +20,7 @@ jobs:
       - name: Install modules
         run: yarn
       - name: RTL tests
-        run: yarn test
+        run: yarn test:rtl
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
