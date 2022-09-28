@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+The project aims to use the following tools/technologies on top of Next.js :
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Typescript 
+- Storybook
+- React Testing library with Jest
+- Cypress
+- Contentful CMS
+- Redux Toolkit
+- Tailwind
+- ESLint/Prettier
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Clone the repo using: 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```git clone https://github.com/axelerant-trainings-frontend/grocery-plus.git```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Navigate to project:
 
-## Learn More
+``` cd grocery-plus ```
 
-To learn more about Next.js, take a look at the following resources:
+### Install dependencies
+Assuming you have yarn installed, run ``` yarn ``` to install dependencies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Starting the project's development server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+``` yarn dev ```
 
-## Deploy on Vercel
+This starts the project's development server on port 3000 by default.
+Check your terminal output to get the exact url to access your project instance.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Component structure approach
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Each component should have its related files as siblings within the same parent directory.
+
+/components/button
+- Button.tsx
+- Button.test.tsx
+- Button.stories.tsx
+
+Same approach should be followed for pages:
+
+
+## Running tests with RTL and Jest
+``` yarn lint ```
+
+## Starting Storybook
+``` yarn storybook ```
+
+## Generate types for content from Contentful
+``` yarn generate-types ```
+
+This needs to be executed only once or when you modify content model/schema in contentful.
+
+# [Design Reference](https://www.figma.com/file/elrNw4OBVb7wGGfAcBoyKK/Grocery-Plus---Grocery-App-UI-Kit-(Community)-(Copy)?node-id=0%3A1)
