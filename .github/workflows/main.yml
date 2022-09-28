@@ -11,3 +11,8 @@ jobs:
         run: yarn
       - name: Run tests
         run: yarn test
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
