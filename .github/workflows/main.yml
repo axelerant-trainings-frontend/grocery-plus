@@ -1,7 +1,7 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,8 +9,18 @@ jobs:
           node-version: lts
       - name: Install modules
         run: yarn
-      - name: Run tests
-        run: yarn test
+      - name: Lint files
+        run: yarn lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: lts
+      - name: Install modules
+        run: yarn
+      - name: RTL tests
+        run: yarn test:rtl
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
