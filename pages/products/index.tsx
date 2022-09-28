@@ -1,21 +1,8 @@
-import { FieldItem } from "contentful";
 import Image from "next/image";
 import React from "react";
 
 import contentfulClient from "../../utils/contentfulClient";
-
-type productsType = {
-  products: {
-    description: string;
-    discount: number;
-    id: string;
-    images: FieldItem;
-    price: number;
-    quantity: number;
-    summary: string;
-    unit: string;
-  }[];
-};
+import { productsType } from "../../@types/product.types";
 
 const Products = ({ products }: productsType) => {
   return (
