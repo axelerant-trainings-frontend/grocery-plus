@@ -1,21 +1,6 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          node-version: lts
-      - name: Install modules
-        run: yarn
-      - name: Run tests
-        run: yarn test
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          start: npm run dev
-          wait-on: 'http://localhost:3000'
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -24,5 +9,20 @@ jobs:
           node-version: lts
       - name: Install modules
         run: yarn
-      - name: Run tests
+      - name: Lint files
         run: yarn lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: lts
+      - name: Install modules
+        run: yarn
+      - name: RTL tests
+        run: yarn test
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
