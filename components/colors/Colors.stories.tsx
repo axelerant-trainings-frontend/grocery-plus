@@ -7,83 +7,89 @@ export default {
   component: Colors,
 } as ComponentMeta<typeof Colors>;
 
+const colors_green = [
+  { className: "green-primary", value: "rgba(135, 221, 57, 1)" },
+  { className: "green-secondary", value: "rgba(94, 196, 1, 1)" },
+];
+
+const colors_red = [
+  { className: "red-primary", value: "rgba(255, 85, 82, 1)" },
+  { className: "red-secondary", value: "rgba(255, 85, 82, 0.72)" },
+];
+
+const colors_orange = [
+  { className: "orange-light", value: "rgba(243, 122, 32, 1)" },
+];
+
+const colors_gray = [
+  { className: "gray-light", value: "rgba(240, 241, 242, 1)" },
+  { className: "gray-darkish", value: "rgba(55, 71, 79, 0.72)" },
+];
+
+const colors_light = [
+  { className: "light-regular", value: "rgba(252, 252, 252, 0.6)" },
+  { className: "light-off", value: "rgba(54, 179, 126, 0.14)" },
+];
+
+const colors_silver = [
+  { className: "silver-light", value: "rgba(196, 196, 196, 1)" },
+];
+
+const colors_flashwhite = [
+  { className: "flashWhite", value: "rgba(243, 244, 244, 1)" },
+];
+
+const colors_charcoal = [
+  { className: "charcoal", value: "rgba(55, 71, 79, 1)" },
+];
+
+const colors_blackolive = [
+  { className: "blackOlive", value: "rgba(62, 62, 62, 1)" },
+];
+
 const Template: ComponentStory<typeof Colors> = (args) => <Colors {...args} />;
 
-export const green_primary = Template.bind({});
-export const green_secondary = Template.bind({});
-export const red_primary = Template.bind({});
-export const red_secondary = Template.bind({});
-export const orange_light = Template.bind({});
-export const gray_light = Template.bind({});
-export const gray_darkish = Template.bind({});
-export const light_regular = Template.bind({});
-export const light_off = Template.bind({});
-export const silver_light = Template.bind({});
-export const flashWhite = Template.bind({});
+export const green = Template.bind({});
+green.args = {
+  colors: colors_green,
+};
+
+export const red = Template.bind({});
+red.args = {
+  colors: colors_red,
+};
+
+export const orange = Template.bind({});
+orange.args = {
+  colors: colors_orange,
+};
+
+export const gray = Template.bind({});
+gray.args = {
+  colors: colors_gray,
+};
+
+export const light = Template.bind({});
+light.args = {
+  colors: colors_light,
+};
+
+export const silver = Template.bind({});
+silver.args = {
+  colors: colors_silver,
+};
+
+export const flashwhite = Template.bind({});
+flashwhite.args = {
+  colors: colors_flashwhite,
+};
+
 export const charcoal = Template.bind({});
-export const blackOlive = Template.bind({});
-
-green_primary.args = {
-  class: "bg-green-primary w-20 h-12",
-  children: "",
-};
-
-green_secondary.args = {
-  class: "bg-green-secondary w-20 h-12",
-  children: "",
-};
-
-red_primary.args = {
-  class: "bg-red-primary w-20 h-12",
-  children: "",
-};
-
-red_secondary.args = {
-  class: "bg-red-secondary w-20 h-12",
-  children: "",
-};
-
-orange_light.args = {
-  class: "bg-orange-light w-20 h-12",
-  children: "",
-};
-
-gray_light.args = {
-  class: "bg-gray-light w-20 h-12",
-  children: "",
-};
-
-gray_darkish.args = {
-  class: "bg-gray-darkish w-20 h-12",
-  children: "",
-};
-
-light_regular.args = {
-  class: "bg-light-regular w-20 h-12 border-solid border-2 border-black-500",
-  children: "",
-};
-
-light_off.args = {
-  class: "bg-light-off w-20 h-12",
-  children: "",
-};
-
-silver_light.args = {
-  class: "bg-silver-light w-20 h-12",
-  children: "",
-};
-
-flashWhite.args = {
-  class: "bg-flashWhite w-20 h-12",
-  children: "",
-};
-
 charcoal.args = {
-  class: "bg-charcoal w-20 h-12",
-  children: "",
+  colors: colors_charcoal,
 };
 
-blackOlive.args = {
-  class: "bg-blackOlive w-20 h-12",
-  children: "",
+export const blackolive = Template.bind({});
+blackolive.args = {
+  colors: colors_blackolive,
 };
