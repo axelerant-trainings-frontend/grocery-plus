@@ -1,15 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+export interface OrderItem {
+  id: number;
+  title: string;
+  count: number;
+}
 
 export interface OrderState {
-  value: number;
+  items: OrderItem[];
+  amount: number;
 }
 
 const initialState: OrderState = {
-  value: 10,
+  items: [],
+  amount: 0,
 };
 
 export const orderSlice = createSlice({
-  name: "orders",
+  name: 'orders',
   initialState,
   reducers: {},
 });
