@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-import contentfulClient from "../../utils/contentfulClient";
-import { productsType } from "../../@types/product.types";
+import contentfulClient from '../../utils/contentfulClient';
+import { productsType } from '../../@types/product.types';
 
 const Products = ({ products }: productsType) => {
   return (
