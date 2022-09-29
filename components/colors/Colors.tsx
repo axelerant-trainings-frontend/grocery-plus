@@ -2,18 +2,20 @@ import React from "react";
 
 function Colors({ colors }) {
   return (
-    <div className="space-y-5">
-      <div className="flex items-center justify-around ">
-        <span>Class Name</span>
-        <span>Color</span>
-      </div>
+    <div className="space-y-10">
+      <div className="flex items-center justify-around "></div>
       {colors?.map((color) => {
         return (
-          <div className="flex justify-around px-20 ">
-            <span>{color.className}</span>
-            <div className={"w-48 h-12 text-center justify-items-center bg-" + color.className}>
-              {" "}
-              {color.value}{" "}
+          <div className="flex justify-around px-40">
+            <span className="font-bold ">{color.className}</span>
+            <div className="flex flex-col items-center">
+              <div
+                className={
+                  "w-48 py-3 h-12 text-center rounded-lg justify-items-center bg-" +
+                  color.className
+                }
+              ></div>
+              <span>{color.value}</span>
             </div>
           </div>
         );
