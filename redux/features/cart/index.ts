@@ -4,6 +4,7 @@ interface CartItem {
   id: number;
   title: string;
   count: number;
+  price: number;
 }
 
 export interface CartState {
@@ -14,8 +15,8 @@ export interface CartState {
 
 const initialState: CartState = {
   items: [
-    { id: 1, title: 'Soap', count: 1 },
-    { id: 2, title: 'shampoo', count: 1 },
+    { id: 1, title: 'Soap', price: 35, count: 1 },
+    { id: 2, title: 'shampoo', price: 150, count: 1 },
   ],
   amount: 0,
   total: 0,
@@ -28,33 +29,56 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.items = [];
     },
-    addToCart: (state, action) => {
-      const itemInCart = state.items.find((cartItem) => {
-        return cartItem.id === action.payload.id;
-      });
-      if (itemInCart) {
-        itemInCart.count++;
+    addItem: (state, action) => {
+      const itemId = action.payload.id;
+      const item = state.items.find((item) => item.id === itemId);
+      if (item) {
+        item.count++;
       } else {
-        state.items.push({ ...action.payload });
+        state.items.push(action.payload);
       }
     },
-    removeFromCart: (state, action) => {
-      const itemInCart = state.items.find((cartItem) => {
-        return cartItem.id === action.payload.id;
-      });
-      if (itemInCart) {
-        if (itemInCart.count > 1) {
-          itemInCart.count--;
-        } else {
-          state.items.pop();
-        }
+    removeItem: (state, action) => {
+      const itemId = action.payload;
+      const item = state.items.find((item) => item.id !== itemId);
+      if (item && item.count > 1) {
+        item.count--;
+      } else {
+        state.items = state.items.filter((item) => item.id !== itemId);
       }
+    },
+    incrementItem: (state, action) => {
+      const itemId = action.payload;
+      const item = state.items.find((item) => item.id === itemId);
+      if (item) {
+        item.count++;
+      }
+    },
+    decrementItem: (state, action) => {
+      const itemId = action.payload;
+      const item = state.items.find((item) => item.id === itemId);
+      if (item) {
+        item.count--;
+      }
+    },
+    calculateCartItems: (state) => {
+      state.amount = state.items.length;
+      state.total = state.items.reduce(
+        (total, item) => (total += item.count * item.price),
+        0
+      );
     },
   },
 });
 
-export const selectCart = (state) =>
-  state.cart.items.map((cartitem) => cartitem);
-export const { clearCart, addToCart, removeFromCart } = cartSlice.actions;
+export const selectCart = (state) => state.cart;
+export const {
+  clearCart,
+  removeItem,
+  incrementItem,
+  decrementItem,
+  addItem,
+  calculateCartItems,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
