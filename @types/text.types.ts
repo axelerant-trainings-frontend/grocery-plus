@@ -1,15 +1,15 @@
 type textType = {
-  title?: string
-  variant?:
-    | "small"
-    | "medium"
-    | "large"
-    | "Xlarge"
-    | "small-bold"
-    | "medium-bold"
-    | "large-bold"
-    | "Xlarge-bold"
-  extraClasses?: string
-}
+  title: string;
+  variant:
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'small-bold'
+    | 'medium-bold'
+    | 'large-bold'
+    | 'xlarge-bold';
+  extraClasses?: string;
+};
 
-export default textType
+export default textType;
