@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@contentful/rich-text-types": "^15.13.2",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
