@@ -1,27 +1,31 @@
 import React from "react";
 
-function Colors({ colors }) {
+interface ColorProps {
+  colors: { [key: string]: string };
+}
+
+const Colors: React.FC<ColorProps> = ({ colors }) => {
   return (
     <div className="space-y-10">
       <div className="flex items-center justify-around "></div>
-      {colors?.map((color) => {
+      {Object.entries(colors).map(([colorName, colorValue]) => {
         return (
           <div className="flex justify-around px-40">
-            <span className="font-bold ">{color.className}</span>
+            <span className="font-bold ">{colorName}</span>
             <div className="flex flex-col items-center">
               <div
+                style={{ backgroundColor: colorValue }}
                 className={
-                  "w-48 py-3 h-12 text-center rounded-lg justify-items-center bg-" +
-                  color.className
+                  "w-48 py-3 h-12 text-center rounded-lg justify-items-center"
                 }
               ></div>
-              <span>{color.value}</span>
+              <span>{colorValue}</span>
             </div>
           </div>
         );
       })}
     </div>
   );
-}
+};
 
 export default Colors;
