@@ -3,7 +3,7 @@ import React from 'react';
 import Button from './Button';
 
 export default {
-  title: 'Button',
+  title: '',
   Component: Button,
   argTypes: {
     variant: {
@@ -30,7 +30,7 @@ Primary.args = {
   text: 'Click here',
   iconLeft: true,
   iconRight: true,
+  iconName: '',
   extraClasses: '',
-  iconClasses: '',
   textClasses: '',
 };

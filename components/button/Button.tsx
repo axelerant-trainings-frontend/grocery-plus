@@ -1,14 +1,13 @@
-import Image from 'next/image';
 import React from 'react';
 import { ButtonType } from '../../@types/button.types';
 
 const Button = ({
   variant,
-  text = 'Button',
+  text = '',
   iconLeft,
   iconRight,
+  iconName,
   extraClasses = '',
-  iconClasses = '',
   textClasses = '',
   onClick,
 }: ButtonType) => {
@@ -41,35 +40,9 @@ const Button = ({
       className={classes + ' ' + extraClasses}
       onClick={() => (onClick != null ? onClick : null)}
     >
-      {iconLeft && (
-        <Image
-          className={iconClasses}
-          src="/vector.png"
-          width={9.92}
-          height={11.46}
-        />
-      )}
+      {iconLeft && <img className="w-7" src={iconName} />}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
-      {iconRight && (
-        <Image
-          className={iconClasses}
-          // bag-img
-          // src="/vector.png"
-
-          // save-img
-          // src="/save.png"
-
-          // left_arrow-img
-          // src="/left_arrow.png"
-
-          // right_arrow-img
-          src="/right_arrow.png"
-          // delete-img
-          // src="/delete.png"
-          width={17}
-          height={19.6}
-        />
-      )}
+      {iconRight && <img className="w-7" src={iconName} />}
     </div>
   );
 };

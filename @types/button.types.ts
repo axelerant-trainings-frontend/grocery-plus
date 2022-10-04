@@ -4,7 +4,7 @@ export type ButtonType = {
   iconLeft?: string | boolean;
   iconRight?: string | boolean;
   extraClasses?: string;
-  iconClasses?: string;
+  iconName?: string;
   textClasses?: string;
   onClick?: () => void;
 };
