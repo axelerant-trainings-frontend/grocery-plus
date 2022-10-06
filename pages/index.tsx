@@ -1,8 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Icon from "../components/Icon/Icon";
-import { HomeIcon, DashIcon, ArrowForwardIcon, BagIcon } from '../components/iconLibrary';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import Icon from '../components/Icon/Icon';
+import {
+  HomeIcon,
+  DashIcon,
+  ArrowForwardIcon,
+  BagIcon,
+} from '../components/iconLibrary';
 export default function Home() {
   return (
     <div className="{styles.container} max-w-screen-sm mx-auto">
@@ -13,11 +18,36 @@ export default function Home() {
       </Head>
       <div className="mx-auto mt-10 prose">
         <h1>Testing out tailwind typography</h1>
-        <Icon icon={HomeIcon} height="50" width="50" className="text-charcoal hover:text-slate-500 cursor-pointer" />
-        <Icon icon={HomeIcon} height="50" width="50" className="text-white hover:text-slate-500 cursor-pointer" />
-        <Icon icon={DashIcon} height="50" width="50" className="text-charcoal hover:text-red-700 cursor-pointer" />
-        <Icon icon={ArrowForwardIcon} height="50" width="50" className="text-charcoal hover:text-red-700 cursor-pointer" />
-        <Icon icon={BagIcon} height="50" width="50" className="text-charcoal hover:text-green-700 cursor-pointer" />
+        <Icon
+          icon={HomeIcon}
+          height="50"
+          width="50"
+          className="text-charcoal hover:text-slate-500 cursor-pointer"
+        />
+        <Icon
+          icon={HomeIcon}
+          height="50"
+          width="50"
+          className="text-white hover:text-slate-500 cursor-pointer"
+        />
+        <Icon
+          icon={DashIcon}
+          height="50"
+          width="50"
+          className="text-charcoal hover:text-red-700 cursor-pointer"
+        />
+        <Icon
+          icon={ArrowForwardIcon}
+          height="50"
+          width="50"
+          className="text-charcoal hover:text-red-700 cursor-pointer"
+        />
+        <Icon
+          icon={BagIcon}
+          height="50"
+          width="50"
+          className="text-charcoal hover:text-green-700 cursor-pointer"
+        />
         <h2>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos,
           delectus.
