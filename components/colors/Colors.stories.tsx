@@ -1,11 +1,11 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Colors from "./Colors";
-import twConfig from "../../tailwind.config";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Colors from './Colors';
+import twConfig from '../../tailwind.config';
 
 const allColors = Object.entries(twConfig?.theme?.extend?.colors ?? []).reduce(
   (colors, [colorName, colorValue]) => {
-    if (typeof colorValue === "string") {
+    if (typeof colorValue === 'string') {
       colors[colorName] = colorValue;
     } else {
       Object.entries(colorValue).forEach(
@@ -20,7 +20,7 @@ const allColors = Object.entries(twConfig?.theme?.extend?.colors ?? []).reduce(
 );
 
 export default {
-  title: " Colors",
+  title: ' Colors',
   component: Colors,
 } as ComponentMeta<typeof Colors>;
 
