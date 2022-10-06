@@ -76,6 +76,9 @@ module.exports = {
         lg: '12px',
         xl: '20px',
       },
+      boxShadow: {
+        primary: '0px 2px 7px rgba(0, 0, 0, 0.24);',
+      },
       colors: {
         blue: {
           primary: 'rgba(35, 108, 217, 1)',
