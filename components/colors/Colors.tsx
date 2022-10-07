@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ColorProps {
   colors: { [key: string]: string };
@@ -16,7 +16,7 @@ const Colors: React.FC<ColorProps> = ({ colors }) => {
               <div
                 style={{ backgroundColor: colorValue }}
                 className={
-                  "w-48 py-3 h-12 text-center rounded-lg justify-items-center"
+                  'w-48 py-3 h-12 text-center rounded-lg justify-items-center'
                 }
               ></div>
               <span>{colorValue}</span>
