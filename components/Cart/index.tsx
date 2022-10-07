@@ -30,7 +30,7 @@ const Cart = () => {
         <button
           onClick={() =>
             dispatch(
-              addItem({ id: 3, title: 'Face Wash', count: 1, price: 10 })
+              addItem({ id: 3, title: 'Face Wash', count: 1, price: 10 }),
             )
           }
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-1/2"
