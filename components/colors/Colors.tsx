@@ -7,7 +7,7 @@ interface ColorProps {
 const Colors: React.FC<ColorProps> = ({ colors }) => {
   return (
     <div className="space-y-10">
-      <div className="flex items-center justify-around "></div>
+      <div className="flex items-center justify-around"></div>
       {Object.entries(colors).map(([colorName, colorValue]) => {
         return (
           <div className="flex justify-around px-40">
