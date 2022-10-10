@@ -32,7 +32,7 @@ module.exports = {
         sm: '54px',
         lg: '116px',
         xl: '120px',
-        '2xl': '1214px',
+        '2xl': '121px',
         '3xl': '135px',
         '4xl': '160px',
         '5xl': '282px',
@@ -66,6 +66,9 @@ module.exports = {
         xl: '20px',
       },
       colors: {
+        blue: {
+          primary: 'rgba(35, 108, 217, 1)',
+        },
         green: {
           primary: 'rgba(135, 221, 57, 1)',
           secondary: 'rgba(94, 196, 1, 1)',

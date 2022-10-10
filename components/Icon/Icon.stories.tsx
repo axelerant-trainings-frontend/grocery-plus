@@ -1,0 +1,78 @@
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Icon from './Icon';
+import { MenuIcon } from '../iconLibrary';
+
+export default {
+  title: 'Icon',
+  Component: Icon,
+  argTypes: {},
+} as ComponentMeta<typeof Icon>;
+
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
+
+export const CharcolIcon = Template.bind({});
+CharcolIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'charcoal',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};
+
+export const WhiteIcon = Template.bind({});
+WhiteIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'white',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};
+
+export const OrangeLightIcon = Template.bind({});
+OrangeLightIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'orange-light',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};
+
+export const GreenSecondaryIcon = Template.bind({});
+GreenSecondaryIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'green-secondary',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};
+
+export const RedPrimaryIcon = Template.bind({});
+RedPrimaryIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'red-primary',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};
+
+export const BluePrimaryIcon = Template.bind({});
+BluePrimaryIcon.args = {
+  icon: MenuIcon,
+  height: '50',
+  width: '50',
+  viewBoxWidth: '20',
+  viewBoxHeight: '14',
+  variant: 'blue-primary',
+  extraClasses: 'hover:text-slate-500 cursor-pointer',
+};

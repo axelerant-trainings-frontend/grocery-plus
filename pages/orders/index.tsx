@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectOrder } from '../../redux/reduxSlices/orderSlice';
+import { selectOrder } from '../../redux/features/order';
 
 const Orders = () => {
   const orderCount = useSelector(selectOrder);
