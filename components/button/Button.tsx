@@ -37,10 +37,7 @@ const Button = ({
     textColor = 'text-green-primary';
   }
   return (
-    <button
-      className={classes + ' ' + extraClasses}
-      onClick={() => (onClick != null ? onClick : null)}
-    >
+    <button className={classes + ' ' + extraClasses} onClick={onClick}>
       {iconLeft && <img className="w-7" src={iconName} />}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
       {iconRight && <img className="w-7" src={iconName} />}
