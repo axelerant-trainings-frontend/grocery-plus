@@ -3,16 +3,17 @@ import { ButtonType } from '../../@types/button.types';
 
 const Button = ({
   variant,
-  text = '',
+  text,
   iconLeft,
   iconRight,
   iconName,
-  extraClasses = '',
-  textClasses = '',
+  extraClasses,
+  textClasses ,
   onClick,
 }: ButtonType) => {
   let classes = '';
   let textColor = '';
+
   const defaultClasses =
     'flex items-center w-full px-4 py-3 rounded-xs cursor-pointer';
   if (variant === 'primary') {
@@ -36,14 +37,14 @@ const Button = ({
     textColor = 'text-green-primary';
   }
   return (
-    <div
+    <button
       className={classes + ' ' + extraClasses}
       onClick={() => (onClick != null ? onClick : null)}
     >
       {iconLeft && <img className="w-7" src={iconName} />}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
       {iconRight && <img className="w-7" src={iconName} />}
-    </div>
+    </button>
   );
 };
 

@@ -30,7 +30,7 @@ Primary.args = {
   text: 'Click here',
   iconLeft: true,
   iconRight: true,
-  iconName: '',
+  iconName: '/save.svg',
   extraClasses: '',
   textClasses: '',
 };
