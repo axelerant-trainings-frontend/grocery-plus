@@ -10,9 +10,23 @@ const Icon: React.FC<iconType> = ({
   variant,
   extraClasses,
 }) => {
+  let variantClass;
+  if (variant == 'charcoal') {
+    variantClass = 'text-charcoal';
+  } else if (variant == 'white') {
+    variantClass = 'text-white';
+  } else if (variant == 'orange-light') {
+    variantClass = 'text-orange-light';
+  } else if (variant == 'green-secondary') {
+    variantClass = 'text-green-secondary';
+  } else if (variant == 'red-primary') {
+    variantClass = 'text-red-primary';
+  } else if (variant == 'blue-primary') {
+    variantClass = 'text-blue-primary';
+  }
   return (
     <div
-      className={`icon w-fit h-auto text-${variant} ${
+      className={`icon w-fit h-auto ${variantClass} ${
         extraClasses ? extraClasses : ''
       }`}
       data-testid="svg-icon-wrapper"
@@ -32,8 +46,8 @@ const Icon: React.FC<iconType> = ({
         preserveAspectRatio="xMidYMid meet"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d={icon}
           fill="currentcolor"
           data-testid="svg-icon-path"
