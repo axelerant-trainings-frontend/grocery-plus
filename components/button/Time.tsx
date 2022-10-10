@@ -1,7 +1,7 @@
 import React from 'react';
-import tagType from '../../@types/tag.type';
+import timeType from '../../@types/time.type';
 
-function Tag({ start, end, variant }: tagType) {
+function Time({ start, end, variant }: timeType) {
   const extraClasses =
     'bg-gray-light h-[52px] w-[103px] m-1 rounded-sm p-2 cursor-pointer';
 
@@ -17,7 +17,7 @@ function Tag({ start, end, variant }: tagType) {
         {start} - {end}
       </button>
     );
-  } else if (variant == 'inactive') {
+  } else {
     return (
       <button className={'text-charcoal text-md' + ' ' + extraClasses}>
         {start} - {end}
@@ -26,4 +26,4 @@ function Tag({ start, end, variant }: tagType) {
   }
 }
 
-export default Tag;
+export default Time;

@@ -1,6 +1,6 @@
 type inputType = {
   label?: string;
-  variant: "text" | "number" | "password" | "search" | "date";
+  variant: 'text' | 'number' | 'password' | 'date';
   placeholder?: string;
   icon?: string;
 };

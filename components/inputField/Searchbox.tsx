@@ -1,5 +1,5 @@
 import React from 'react';
-import searchboxType from '../../@types/Searchbox';
+import searchboxType from '../../@types/searchbox';
 
 function Searchbox({ icon, label, placeholder, variant }: searchboxType) {
   if (variant == 'active') {
@@ -22,7 +22,7 @@ function Searchbox({ icon, label, placeholder, variant }: searchboxType) {
         </div>
       </>
     );
-  } else if (variant == 'inactive') {
+  } else {
     return (
       <>
         <div className="flex items-center">

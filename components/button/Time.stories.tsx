@@ -1,16 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Tag from './Tag';
+import Time from './Time';
 
 export default {
-  title: 'GROCERY/Tag',
-  component: Tag,
+  title: 'GROCERY/Time',
+  component: Time,
   args: {
     variant: 'active',
   },
-} as ComponentMeta<typeof Tag>;
+} as ComponentMeta<typeof Time>;
 
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
+const Template: ComponentStory<typeof Time> = (args) => <Time {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
