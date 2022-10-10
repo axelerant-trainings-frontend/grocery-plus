@@ -8,7 +8,7 @@ const Button = ({
   iconRight,
   iconName,
   extraClasses,
-  textClasses ,
+  textClasses,
   onClick,
 }: ButtonType) => {
   let classes = '';
