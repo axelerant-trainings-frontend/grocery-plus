@@ -49,7 +49,6 @@ GreenSecondaryIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'green-secondary',
-  extraClasses: '',
 };
 
 export const RedPrimaryIcon = Template.bind({});
