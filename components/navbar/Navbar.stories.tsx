@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Navbar from './Navbar';
-
 export default {
   title: 'GROCERY/Navbar',
   component: Navbar,
@@ -11,9 +10,4 @@ export default {
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const primary = Template.bind({});
-primary.args = {
-  iconHome: '/icons/home.svg',
-  iconDashboard: '/icons/dashboard.svg',
-  iconBag: '/icons/bag.svg',
-  iconMenu: '/icons/menu.svg',
-};
+primary.args = {};

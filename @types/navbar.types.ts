@@ -1,8 +1,10 @@
-type navbarType = {
-  iconHome: string;
-  iconDashboard: string;
-  iconBag: string;
-  iconMenu: string;
+export type NavbarLink = {
+  title: string;
+  link: string;
+  icon: string;
+  linkTitle: string;
 };
-
-export default navbarType;
+type NavbarModel = {
+  links?: NavbarLink[];
+};
+export default NavbarModel;

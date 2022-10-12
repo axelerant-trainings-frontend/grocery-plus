@@ -1,29 +1,51 @@
 import React from 'react';
-import navbarType from '../../@types/navbar.types';
+import NavbarModel, { NavbarLink } from '../../@types/navbar.types';
+import Icon from '../Icon/Icon';
+import { BagIcon, DashIcon, HomeIcon, MenuIcon } from '../iconLibrary';
 
-function Navbar({ iconHome, iconDashboard, iconBag, iconMenu }: navbarType) {
+const defaultLinks: NavbarLink[] = [
+  {
+    title: 'home',
+    icon: HomeIcon,
+    link: '/',
+    linkTitle: 'home',
+  },
+  {
+    title: 'dashboard',
+    icon: DashIcon,
+    link: '/dashboard',
+    linkTitle: 'dashboard',
+  },
+  {
+    title: 'bag',
+    icon: BagIcon,
+    link: '/bag',
+    linkTitle: 'bag',
+  },
+  {
+    title: 'menu',
+    icon: MenuIcon,
+    link: '/menu',
+    linkTitle: 'menu',
+  },
+];
+
+function Navbar({ links = defaultLinks }: NavbarModel) {
   return (
-    <>
-      <div className="main-wrapper h-lg items-center mx-auto flex max-w-screen-sm justify-around bg-white-regular rounded-t-xl m-10 shadow-primary ">
-        <a href="/home">
-          <img className="h-5 w-5 cursor-pointer" src={iconHome} alt="home" />
-        </a>
-        <a href="/dashboard">
-          <img
-            className="h-5 w-5 cursor-pointer"
-            src={iconDashboard}
-            alt="dashboard"
+    <div className="flex pt-20 justify-around items-center bg-white-regular rounded-t-xl m-10 shadow-primary max-w-screen-sm h-116 mt-10">
+      {links.map((item) => (
+        <a title={item.linkTitle} key={item.title} href={item.link}>
+          <Icon
+            icon={item.icon}
+            viewBoxHeight="42"
+            viewBoxWidth="19"
+            variant="charcoal"
+            height="50"
+            width="20"
           />
         </a>
-        <a href="/bag">
-          <img className="h-5 w-5 cursor-pointer" src={iconBag} alt="bag" />
-        </a>
-        <a href="/menu">
-          <img className="h-5 w-5  cursor-pointer" src={iconMenu} alt="menu" />
-        </a>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
-
 export default Navbar;
