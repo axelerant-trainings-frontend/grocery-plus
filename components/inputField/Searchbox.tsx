@@ -1,44 +1,46 @@
 import React from 'react';
-import searchboxType from '../../@types/searchbox';
-
-function Searchbox({ icon, label, placeholder, variant }: searchboxType) {
-  if (variant == 'active') {
-    return (
-      <>
-        <div className="flex items-center">
-          <span className="text-md text-red-primary absolute ml-[64px] mb-5">
-            {label}
-          </span>
-          <img
-            className="h-5 w-5 absolute ml-5 active"
-            src={icon}
-            alt="searchbox"
-          />
-          <input
-            className="h-[52px] w-4xl pl-16 pt-2 text-sm rounded-t-xs bg-gray-light border-red-primary border-b-0.5"
-            type="search"
-            placeholder={placeholder}
-          />
-        </div>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div className="flex items-center">
-          <img
-            className="h-5 w-5 absolute ml-5 inactive"
-            src={icon}
-            alt="searchbox"
-          />
-          <input
-            className="h-[52px] w-4xl pl-16 text-sm rounded-xs bg-gray-light"
-            type="search"
-            placeholder={placeholder}
-          />
-        </div>
-      </>
-    );
-  }
+import SearchboxModel from '../../@types/searchbox.types';
+import { SearchIcon } from '../iconLibrary';
+import Icon from '../Icon/Icon';
+function Searchbox({ label, placeholder, variant }: SearchboxModel) {
+  const classes = 'text-2xl w-343 h-52 rounded-xs bg-gray-light pl-60';
+  return (
+    <>
+      {variant == 'active' ? (
+        <label className="text-md text-red-primary pl-60 absolute mt-7 leading-xs">
+          {label}
+        </label>
+      ) : (
+        ''
+      )}
+      <div
+        data-testid="searchbox"
+        className={
+          variant == 'active'
+            ? 'flex items-center active'
+            : 'flex items-center inactive'
+        }
+      >
+        <Icon
+          icon={SearchIcon}
+          variant="charcoal"
+          height="20"
+          width="20"
+          extraClasses="ml-20 absolute"
+        />
+        <input
+          className={
+            variant == 'active'
+              ? `${classes}` +
+                ' ' +
+                'pt-18 border-red-primary border-b-2 active'
+              : `${classes}` + ' ' + 'inactive'
+          }
+          type="search"
+          placeholder={placeholder}
+        />
+      </div>
+    </>
+  );
 }
 export default Searchbox;

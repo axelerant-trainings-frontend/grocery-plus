@@ -1,90 +1,92 @@
 import React from 'react';
-import inputType from '../../@types/input.types';
-
-function InputField({ label, variant, placeholder, icon }: inputType) {
+import InputModel from '../../@types/input.types';
+import Icon from '../Icon/Icon';
+import {
+  LockIcon,
+  AccountCirleIcon,
+  VisibilityIcon,
+  CallIcon,
+} from '../iconLibrary';
+function InputField({ label, variant, placeholder, icon }: InputModel) {
   let inputType = '';
   let iconLeft = '';
   let iconRight = '';
-  const extraClasses = 'pl-[61px] absolute text-sm mt-1.5';
-
+  const labelClasses = 'pl-60 absolute text-md mt-7 leading-xs';
+  const classes =
+    'text-3xl leading-2xl w-343 h-52 rounded-xs pt-18 bg-gray-light pl-60 text';
   if (variant == 'text') {
     inputType = 'text';
-    iconLeft = '/icons/user.png';
+    iconLeft = AccountCirleIcon;
   }
   if (variant == 'password') {
     inputType = 'password';
-    iconLeft = '/icons/lock_24px.png';
-    iconRight = '/icons/visibility.png';
+    iconLeft = LockIcon;
+    iconRight = VisibilityIcon;
   }
   if (variant == 'number') {
     inputType = 'number';
-    iconLeft = '/icons/call_24px.png';
+    iconLeft = CallIcon;
   }
   if (variant == 'date') {
     inputType = 'date';
   }
 
-  if (icon == 'left') {
-    return (
-      <>
-        <div>
-          <label className={extraClasses}>{label}</label>
-          <div className="flex items-center">
-            <img
-              className={'h-5 w-5 absolute ml-5' + ' ' + `${inputType}`}
-              src={iconLeft}
-              alt="lefticon"
-            />
-            <input
-              className="text-2xl w-4xl h-[52px] rounded-xs pt-2 bg-gray-light pl-[60px]"
-              type={inputType}
-              placeholder={placeholder}
-            />
-          </div>
-        </div>
-      </>
-    );
-  } else if (icon == 'both') {
-    return (
-      <>
-        <label className={extraClasses}>{label}</label>
-        <div className="flex justify-between w-4xl absolute mt-4 px-5">
-          <img
-            className={'h-5 w-5 both' + ' ' + `${inputType}`}
-            src={iconLeft}
-            alt="lefticon"
-          />
-          <img
-            className={'h-[15px] w-[22px] both' + ' ' + `${inputType}`}
-            src={iconRight}
-            alt="righticon"
-          />
-        </div>
-        <input
-          className="text-2xl w-4xl h-[52px] rounded-xs bg-gray-light pl-[60px] pt-2"
-          type={inputType}
-          placeholder={placeholder}
-        />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div>
+  return (
+    <>
+      <div data-testid="inputBox1" className={inputType}>
+        <label className={labelClasses}>{label}</label>
+        <div className="flex items-center">
+          {icon == 'left' ? (
+            <div className="flex items-center">
+              <Icon
+                variant="charcoal"
+                icon={iconLeft}
+                height="20"
+                width="20"
+                extraClasses="ml-20 absolute"
+              />
+            </div>
+          ) : icon == 'both' ? (
+            <>
+              <div className="flex justify-between absolute mt-1 px-5">
+                <div className="w-312 flex justify-between">
+                  <Icon
+                    variant="charcoal"
+                    icon={iconLeft}
+                    height="20"
+                    width="20"
+                    extraClasses=""
+                  />
+                  <Icon
+                    variant="charcoal"
+                    icon={iconRight}
+                    height="15"
+                    width="22"
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            ''
+          )}
           <input
+            data-testid="input"
             className={
-              'w-4xl h-[52px] rounded-xs bg-gray-light px-5' +
-              ' ' +
-              `${inputType}`
+              icon == 'left'
+                ? `${classes}` + ' ' + `${inputType}`
+                : icon == 'both'
+                ? `${classes}` + ' ' + `${inputType}` + ' ' + 'pt-18 pl-60'
+                : 'text-3xl w-343 h-52 rounded-xs bg-gray-light px-5 ' +
+                  ' ' +
+                  `${inputType}`
             }
             type={inputType}
             placeholder={placeholder}
-            data-testid="date"
+            maxLength={16}
           />
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
 }
-
 export default InputField;

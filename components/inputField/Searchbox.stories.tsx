@@ -19,5 +19,4 @@ Primary.args = {
   variant: 'active',
   label: 'Search',
   placeholder: 'Search Anything',
-  icon: '/icons/search_24px.png',
 };

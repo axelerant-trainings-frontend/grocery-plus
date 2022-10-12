@@ -1,7 +1,7 @@
-type timeType = {
+type TimeModel = {
   start: string;
   end: string;
   variant: 'active' | 'inactive';
 };
 
-export default timeType;
+export default TimeModel;
