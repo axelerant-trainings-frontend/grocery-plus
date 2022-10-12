@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { SaveIcon } from '../iconLibrary';
 import Button from './Button';
 
 export default {
@@ -30,7 +31,7 @@ Primary.args = {
   text: 'Click here',
   iconLeft: true,
   iconRight: true,
-  iconName: '/save.svg',
+  icon: SaveIcon,
   extraClasses: '',
   textClasses: '',
 };

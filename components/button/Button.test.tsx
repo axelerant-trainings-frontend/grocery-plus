@@ -14,21 +14,6 @@ describe('Test Button component', () => {
     expect(button).toHaveTextContent(/test data/i);
   });
 
-  it('display an alert onClick', () => {
-    render(
-      <Button
-        variant="primary"
-        text="test data"
-        onClick={(event) => {
-          event.currentTarget.classList.add('clicked');
-        }}
-      />,
-    );
-    const button = screen.getByRole('button');
-    fireEvent.click(button);
-    expect(button).toHaveClass('clicked');
-  });
-
   it('renders the component based on variant primary', () => {
     render(<Button variant="primary" text="Test data" />);
     const button = screen.getByRole('button');
@@ -59,5 +44,20 @@ describe('Test Button component', () => {
     render(<Button variant="tertiary-small" text="Test data" />);
     const button = screen.getByRole('button');
     expect(button).toHaveClass('bg-light-off h-9');
+  });
+
+  it('add class on onClick', () => {
+    render(
+      <Button
+        variant="primary"
+        text="test data"
+        onClick={(event) => {
+          event.currentTarget.classList.add('clicked');
+        }}
+      />,
+    );
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+    expect(button).toHaveClass('clicked');
   });
 });

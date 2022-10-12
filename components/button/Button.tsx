@@ -1,46 +1,51 @@
 import React from 'react';
 import { ButtonType } from '../../@types/button.types';
+import { SaveIcon } from '../iconLibrary';
+import Icon from '../Icon/Icon';
 
 const Button = ({
   variant,
   text,
   iconLeft,
   iconRight,
-  iconName,
   extraClasses,
   textClasses,
   onClick,
 }: ButtonType) => {
-  let classes = '';
   let textColor = '';
-
   const defaultClasses =
-    'flex items-center w-full px-4 py-3 rounded-xs cursor-pointer';
+    'flex items-center w-full px-15 py-16 rounded-xs cursor-pointer';
+  let classes = defaultClasses;
+
   if (variant === 'primary') {
-    classes = `${defaultClasses} bg-green-primary h-12`;
+    classes += ' bg-green-primary h-12';
     textColor = 'text-white';
   } else if (variant === 'secondary') {
-    classes = `${defaultClasses} bg-red-primary h-12`;
+    classes += ` bg-red-primary h-12`;
     textColor = 'text-white';
   } else if (variant === 'tertiary') {
-    classes = `${defaultClasses} bg-light-off h-12`;
+    classes += ` bg-light-off h-12`;
     textColor = 'text-green-primary';
   }
   if (variant === 'primary-small') {
-    classes = `${defaultClasses} bg-green-primary h-9`;
+    classes += ` bg-green-primary h-9`;
     textColor = 'text-white';
   } else if (variant === 'secondary-small') {
-    classes = `${defaultClasses} bg-red-primary h-9`;
+    classes += ` bg-red-primary h-9`;
     textColor = 'text-white';
   } else if (variant === 'tertiary-small') {
-    classes = `${defaultClasses} bg-light-off h-9`;
+    classes += ` bg-light-off h-9`;
     textColor = 'text-green-primary';
   }
   return (
     <button className={classes + ' ' + extraClasses} onClick={onClick}>
-      {iconLeft && <img className="w-7" src={iconName} />}
+      {iconLeft && (
+        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+      )}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
-      {iconRight && <img className="w-7" src={iconName} />}
+      {iconRight && (
+        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+      )}
     </button>
   );
 };
