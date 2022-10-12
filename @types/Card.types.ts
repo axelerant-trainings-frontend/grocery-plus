@@ -12,5 +12,8 @@ type cardType = {
   discountAmount?: number;
   variant: 'primary' | 'secondary' | 'tertiarySearch' | 'tertiaryBag';
   extraClasses?: string;
+  cartIncrement?: Function;
+  count?: number;
+  cartDecrement?: Function;
 };
 export default cardType;

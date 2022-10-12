@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import product01_img from '../../public/image-product-01.png';
+
 import {
   addItem,
   calculateCartItems,
@@ -9,6 +11,7 @@ import {
   removeItem,
   selectCart,
 } from '../../redux/features/cart';
+import Card from '../card/Card';
 
 const Cart = () => {
   const { items: cartItems, amount, total } = useSelector(selectCart);
@@ -30,7 +33,13 @@ const Cart = () => {
         <button
           onClick={() =>
             dispatch(
-              addItem({ id: 3, title: 'Face Wash', count: 1, price: 10 }),
+              addItem({
+                id: 3,
+                title: 'Face Wash',
+                img: product01_img,
+                count: 1,
+                price: 10,
+              }),
             )
           }
           className="w-1/2 rounded-full bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
@@ -46,33 +55,21 @@ const Cart = () => {
       </div>
 
       <h1>Total: {total}</h1>
-      <ul className="mb-4 flex w-1/3 flex-col">
+      <ul className="flex mb-4 flex-col pl-0">
         {cartItems.map((cartItem, index) => {
           return (
-            <li key={index} className="flex border-2 border-gray-200 py-6">
-              <div className="flex-1 py-6 px-4 sm:px-6">
-                <h3>Item: </h3>
-                <p>{cartItem['title']}</p>
-              </div>
-              <div className="flex-1 py-6 px-4 sm:px-6">
-                <h3>Quantity:</h3>
-                <p>{cartItem['count']}</p>
-              </div>
-              <div className="flex-1">
-                <button onClick={() => dispatch(incrementItem(cartItem.id))}>
-                  Increment
-                </button>
-                <button
-                  onClick={() => dispatch(decrementItem(cartItem.id))}
-                  disabled={cartItem.count === 0}
-                >
-                  Decrement
-                </button>
-                <button onClick={() => dispatch(removeItem(cartItem.id))}>
-                  Remove Item
-                </button>
-              </div>
-            </li>
+            <Card
+              key={index}
+              cardImage={cartItem.img}
+              cardLabel={cartItem.title}
+              variant="tertiaryBag"
+              discountAmount={cartItem.discount}
+              originalPrice={cartItem.price}
+              finalPrice={cartItem.discountedPrice}
+              cartIncrement={() => dispatch(incrementItem(cartItem.id))}
+              cartDecrement={() => dispatch(decrementItem(cartItem.id))}
+              count={cartItem.count}
+            />
           );
         })}
       </ul>
