@@ -19,7 +19,6 @@ CharcolIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'charcoal',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
 
 export const WhiteIcon = Template.bind({});
@@ -30,7 +29,6 @@ WhiteIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'white',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
 
 export const OrangeLightIcon = Template.bind({});
@@ -41,7 +39,6 @@ OrangeLightIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'orange-light',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
 
 export const GreenSecondaryIcon = Template.bind({});
@@ -52,7 +49,6 @@ GreenSecondaryIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'green-secondary',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
 
 export const RedPrimaryIcon = Template.bind({});
@@ -63,7 +59,6 @@ RedPrimaryIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'red-primary',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
 
 export const BluePrimaryIcon = Template.bind({});
@@ -74,5 +69,4 @@ BluePrimaryIcon.args = {
   viewBoxWidth: '20',
   viewBoxHeight: '14',
   variant: 'blue-primary',
-  extraClasses: 'hover:text-slate-500 cursor-pointer',
 };
