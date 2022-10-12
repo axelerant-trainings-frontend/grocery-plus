@@ -7,7 +7,7 @@ import { productsType } from '../../@types/product.types';
 const Products = ({ products }: productsType) => {
   return (
     <div className="flex flex-col justify-center">
-      <h1 className="py-6 text5xl text-center">Products Page</h1>
+      <h1 className="text5xl py-6 text-center">Products Page</h1>
       {products &&
         products.map((product) => {
           return (
