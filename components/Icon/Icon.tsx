@@ -26,7 +26,7 @@ const Icon: React.FC<iconType> = ({
   }
   return (
     <div
-      className={`icon w-fit h-auto ${variantClass} ${
+      className={`icon h-auto w-fit ${variantClass} ${
         extraClasses ? extraClasses : ''
       }`}
       data-testid="svg-icon-wrapper"

@@ -16,7 +16,7 @@ const Colors: React.FC<ColorProps> = ({ colors }) => {
               <div
                 style={{ backgroundColor: colorValue }}
                 className={
-                  'w-48 py-3 h-12 text-center rounded-lg justify-items-center'
+                  'h-12 w-48 justify-items-center rounded-lg py-3 text-center'
                 }
               ></div>
               <span>{colorValue}</span>
