@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import Card from './Card';
-import product_img_01 from '../../public/image-product-01.png';
 
 describe('Card', () => {
   it('Renders Primary Card', () => {
     render(
       <Card
-        cardImage={product_img_01}
+        cardImage="https://picsum.photos/200/300.jpg"
         cardLabel="Fruits & Vegetables"
         variant="primary"
       />,
@@ -17,7 +16,7 @@ describe('Card', () => {
   it('Renders Secondary Card', () => {
     render(
       <Card
-        cardImage={product_img_01}
+        cardImage="https://picsum.photos/200/300.jpg"
         cardLabel="Fruits & Vegetables"
         variant="secondary"
         originalPrice={300}
@@ -29,7 +28,7 @@ describe('Card', () => {
   it('Renders TertiarySearch Card', () => {
     render(
       <Card
-        cardImage={product_img_01}
+        cardImage="https://picsum.photos/200/300.jpg"
         cardLabel="Fruits & Vegetables"
         variant="tertiarySearch"
         originalPrice={300}
@@ -41,7 +40,7 @@ describe('Card', () => {
   it('Renders TertiaryBag Card', () => {
     render(
       <Card
-        cardImage={product_img_01}
+        cardImage="https://picsum.photos/200/300.jpg"
         cardLabel="Fruits & Vegetables"
         variant="tertiaryBag"
         originalPrice={300}
