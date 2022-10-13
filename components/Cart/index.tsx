@@ -60,7 +60,7 @@ const Cart = () => {
           return (
             <Card
               key={index}
-              cardImage={cartItem.img}
+              cardImage={cartItem.image}
               cardLabel={cartItem.title}
               variant="tertiaryBag"
               discountAmount={cartItem.discount}

@@ -1,21 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
-import product01_img from '../../../public/image-product-01.png';
-import product02_img from '../../../public/image-product-02.png';
-
-type StaticImageData = {
-  src: string;
-  height?: number;
-  width?: number;
-  blurDataURL?: string;
-};
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import contentfulClient from '../../../utils/contentfulClient';
+export const getPhotos = createAsyncThunk('products/getProducts', async () => {
+  const { getProducts } = contentfulClient();
+  const products = await getProducts();
+  console.log(products);
+});
 
 interface CartItem {
   id: number;
   title: string;
-  img: string | StaticImageData;
+  image: string;
   count: number;
   price: number;
-  discount?: number;
+  discountPercentage?: number;
   discountedPrice?: number;
 }
 
@@ -30,16 +27,16 @@ const initialState: CartState = {
     {
       id: 1,
       title: 'Soap',
-      img: product01_img,
+      image: 'https://picsum.photos/200/300.jpg',
       price: 300,
       count: 1,
-      discount: 20,
-      discountedPrice: 300 - (300 * 20 / 100)
+      discountPercentage: 20,
+      discountedPrice: 300 - (300 * 20) / 100,
     },
     {
       id: 2,
       title: 'shampoo for Men',
-      img: product02_img,
+      image: 'https://picsum.photos/200/300.jpg',
       price: 250,
       count: 1,
     },

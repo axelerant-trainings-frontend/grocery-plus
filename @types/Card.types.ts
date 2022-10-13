@@ -10,7 +10,8 @@ type cardType = {
   originalPrice?: number;
   finalPrice?: number;
   discountAmount?: number;
-  variant: 'primary' | 'secondary' | 'tertiarySearch' | 'tertiaryBag';
+  variant?: 'primary' | 'secondary' | 'tertiarySearch' | 'tertiaryBag';
+  classes?: string;
   extraClasses?: string;
   cartIncrement?: Function;
   count?: number;
