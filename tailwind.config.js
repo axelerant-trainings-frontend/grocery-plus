@@ -13,6 +13,7 @@ module.exports = {
         primary: ['Poppins', 'sans-serif'],
       },
       spacing: {
+        7: '7px',
         8: '8px',
         9: '9px',
         10: '10px',
@@ -33,6 +34,8 @@ module.exports = {
         52: '52px',
         54: '54px',
         56: '56px',
+        60: '60px',
+        103: '103px',
         115: '115px',
         116: '116px',
         120: '120px',
