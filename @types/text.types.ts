@@ -1,4 +1,4 @@
-type textType = {
+type TextModel = {
   title: string;
   variant:
     | 'small'
@@ -12,4 +12,4 @@ type textType = {
   extraClasses?: string;
 };
 
-export default textType;
+export default TextModel;

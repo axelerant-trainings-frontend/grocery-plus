@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Heading from '../components/heading/Heading';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos,
           delectus.
         </h2>
+        <Heading title="Hello" variant="small" size={2} />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi animi
           officia optio corrupti sit vitae reprehenderit, blanditiis, similique
