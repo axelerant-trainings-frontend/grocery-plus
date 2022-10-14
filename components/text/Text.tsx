@@ -1,7 +1,7 @@
 import React from 'react';
-import textType from '../../@types/text.types';
+import TextModel from '../../@types/text.types';
 
-function Text({ title, variant, extraClasses }: textType) {
+function Text({ title, variant, extraClasses }: TextModel) {
   let classes = '';
   if (variant == 'small') {
     classes = 'font-normal text-md leading-xs';
@@ -27,7 +27,10 @@ function Text({ title, variant, extraClasses }: textType) {
   if (variant == 'xlarge-bold') {
     classes = 'font-bold text-2xl leading-xl';
   }
-  return <p className={classes + ' ' + extraClasses}>{title}</p>;
+  return (
+    <p data-testid="text" className={classes + ' ' + extraClasses}>
+      {title}
+    </p>
+  );
 }
-
 export default Text;
