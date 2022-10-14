@@ -24,6 +24,8 @@ const CardSecondary: React.FC<cardType> = ({
           src={cardImage}
           className="w-full h-full object-contain object-center m-0 p-0 min-w-full"
           alt="secondary-card-img"
+          width={100}
+          height={100}
         />
         <DiscountLabel discountAmount={discountAmount!} />
       </div>
