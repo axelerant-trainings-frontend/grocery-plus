@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import product01_img from '../../public/image-product-01.png';
 
 import {
   addItem,
@@ -36,7 +35,7 @@ const Cart = () => {
               addItem({
                 id: 3,
                 title: 'Face Wash',
-                img: product01_img,
+                img: 'https://picsum.photos/id/237/200/300',
                 count: 1,
                 price: 10,
               }),

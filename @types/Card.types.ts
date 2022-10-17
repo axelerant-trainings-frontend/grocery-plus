@@ -1,11 +1,5 @@
-type StaticImageData = {
-  src: string;
-  height: number;
-  width: number;
-  blurDataURL?: string;
-};
 type cardType = {
-  cardImage: string | StaticImageData;
+  cardImage: string;
   cardLabel: string;
   originalPrice?: number;
   finalPrice?: number;

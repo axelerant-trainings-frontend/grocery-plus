@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/future/image';
 import cardType from '../../@types/Card.types';
 import Icon from '../Icon/Icon';
 import { BagIcon, MinimizeIcon, AddIcon } from '../iconLibrary';
 import DiscountLabel from './DiscountLabel';
+import { useDispatch, useSelector, Provider } from 'react-redux';
+
+import { store } from '../../redux/store';
+
+import {
+  addItem,
+  calculateCartItems,
+  clearCart,
+  decrementItem,
+  incrementItem,
+  removeItem,
+  selectCart,
+} from '../../redux/features/cart';
 
 const CardTertiary: React.FC<cardType> = ({
   classes,
@@ -26,14 +39,14 @@ const CardTertiary: React.FC<cardType> = ({
       }`}
     >
       <div className="tertiary-card-img-container w-115 h-121 shrink-0 grow-0 bg-white rounded-sm relative">
-        <Image
+        <img
           src={cardImage}
           className="w-full h-full object-contain object-center m-0 p-0 min-w-full"
           alt="quaternary-card-img"
-          width={100}
-          height={100}
         />
-        <DiscountLabel discountAmount={discountAmount!} />
+        {discountAmount !== undefined && (
+          <DiscountLabel discountAmount={discountAmount!} />
+        )}
       </div>
       <div className="quaternary-card-content-container pl-17 grow">
         <h2 className="text-3xl font-medium text-charcoal leading-6 mt-0 mb-8">
@@ -78,6 +91,7 @@ const CardTertiary: React.FC<cardType> = ({
               <div className="flex">
                 <button
                   className="bag-btn flex w-35 h-35 bg-red-primary items-center justify-center rounded-xxs"
+                  data-testid="decrement-btn-card"
                   onClick={() => cartDecrement}
                 >
                   <Icon
@@ -99,6 +113,7 @@ const CardTertiary: React.FC<cardType> = ({
                 <button
                   className="bag-btn flex w-35 h-35 bg-green-secondary items-center justify-center rounded-xxs"
                   onClick={() => cartIncrement}
+                  data-testid="increment-btn-card"
                 >
                   <Icon
                     icon={AddIcon}
