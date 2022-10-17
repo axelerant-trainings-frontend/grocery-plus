@@ -84,7 +84,7 @@ module.exports = {
       },
       colors: {
         blue: {
-          primary: 'rgba(35, 108, 217, 1)',
+          primary: 'rgba(35, 108, 217, 0.12)',
         },
         green: {
           primary: 'rgba(135, 221, 57, 1)',
