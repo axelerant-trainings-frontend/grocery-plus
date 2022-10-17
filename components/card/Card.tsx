@@ -1,13 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import cardType from '../../@types/Card.types';
-import Image from 'next/future/image';
-import Icon from '../Icon/Icon';
-import { BagIcon, MinimizeIcon, AddIcon } from '../iconLibrary';
 import CardPrimary from './CardPrimary';
 import CardSecondary from './CardSecondary';
 import CardTertiary from './CardTertiary';
 
-const Card: React.FC<cardType> = ({
+const Card = ({
   cardImage,
   cardLabel,
   originalPrice,
@@ -18,7 +15,7 @@ const Card: React.FC<cardType> = ({
   cartIncrement,
   cartDecrement,
   count,
-}) => {
+}: cardType) => {
   let classes = 'flex ';
   switch (variant) {
     case 'primary':
@@ -39,40 +36,48 @@ const Card: React.FC<cardType> = ({
   }
   return (
     <>
-      {variant == 'primary' && (
-        <CardPrimary
-          classes={classes}
-          extraClasses={extraClasses}
-          cardImage={cardImage}
-          cardLabel={cardLabel}
-        />
-      )}
-      {variant == 'secondary' && (
-        <CardSecondary
-          classes={classes}
-          extraClasses={extraClasses}
-          cardImage={cardImage}
-          cardLabel={cardLabel}
-          discountAmount={discountAmount}
-          originalPrice={originalPrice}
-          finalPrice={finalPrice}
-        />
-      )}
-      {(variant == 'tertiaryBag' || variant == 'tertiarySearch') && (
-        <CardTertiary
-          classes={classes}
-          extraClasses={extraClasses}
-          cardImage={cardImage}
-          cardLabel={cardLabel}
-          discountAmount={discountAmount}
-          originalPrice={originalPrice}
-          finalPrice={finalPrice}
-          variant={variant}
-          cartIncrement={cartIncrement}
-          cartDecrement={cartDecrement}
-          count={count}
-        />
-      )}
+      {(() => {
+        if (variant == 'primary') {
+          return (
+            <CardPrimary
+              classes={classes}
+              extraClasses={extraClasses}
+              cardImage={cardImage}
+              cardLabel={cardLabel}
+            />
+          );
+        }
+        if (variant == 'secondary') {
+          return (
+            <CardSecondary
+              classes={classes}
+              extraClasses={extraClasses}
+              cardImage={cardImage}
+              cardLabel={cardLabel}
+              discountAmount={discountAmount}
+              originalPrice={originalPrice}
+              finalPrice={finalPrice}
+            />
+          );
+        }
+        if (variant == 'tertiaryBag' || variant == 'tertiarySearch') {
+          return (
+            <CardTertiary
+              classes={classes}
+              extraClasses={extraClasses}
+              cardImage={cardImage}
+              cardLabel={cardLabel}
+              discountAmount={discountAmount}
+              originalPrice={originalPrice}
+              finalPrice={finalPrice}
+              variant={variant}
+              cartIncrement={cartIncrement}
+              cartDecrement={cartDecrement}
+              count={count}
+            />
+          );
+        }
+      })()}
     </>
   );
 };
