@@ -20,14 +20,14 @@ const CardSecondary: React.FC<cardType> = ({
       data-testid="secondary-card"
     >
       <div className="secondary-card-img-container w-full h-135 shrink-0 grow-0 bg-flashWhite rounded-sm relative p-9">
-        <Image
+        <img
           src={cardImage}
           className="w-full h-full object-contain object-center m-0 p-0 min-w-full"
           alt="secondary-card-img"
-          width={100}
-          height={100}
         />
-        <DiscountLabel discountAmount={discountAmount!} />
+        {discountAmount !== undefined && (
+          <DiscountLabel discountAmount={discountAmount!} />
+        )}
       </div>
       <div className="secondary-card-content-container flex flex-col justify-between h-full">
         <h2 className="text-xl font-normal text-black leading-5 mt-12 mb-0 text-left">

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
-import productImg from '../../public/image-product-01.png';
 export default {
   title: 'Card',
   Component: Card,
@@ -12,14 +11,14 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const PrimaryCard = Template.bind({});
 PrimaryCard.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'primary',
 };
 
 export const SecondaryCardWithoutDiscount = Template.bind({});
 SecondaryCardWithoutDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'secondary',
   originalPrice: 300,
@@ -27,7 +26,7 @@ SecondaryCardWithoutDiscount.args = {
 
 export const SecondaryCardWithDiscount = Template.bind({});
 SecondaryCardWithDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'secondary',
   originalPrice: 300,
@@ -37,7 +36,7 @@ SecondaryCardWithDiscount.args = {
 
 export const TertiarySearchCardWithoutDiscount = Template.bind({});
 TertiarySearchCardWithoutDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'tertiarySearch',
   originalPrice: 300,
@@ -45,7 +44,7 @@ TertiarySearchCardWithoutDiscount.args = {
 
 export const TertiarySearchCardWithDiscount = Template.bind({});
 TertiarySearchCardWithDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'tertiarySearch',
   originalPrice: 300,
@@ -55,7 +54,7 @@ TertiarySearchCardWithDiscount.args = {
 
 export const TertiaryBagCardWithoutDiscount = Template.bind({});
 TertiaryBagCardWithoutDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'tertiaryBag',
   originalPrice: 300,
@@ -64,7 +63,7 @@ TertiaryBagCardWithoutDiscount.args = {
 
 export const TertiaryBagCardWithDiscount = Template.bind({});
 TertiaryBagCardWithDiscount.args = {
-  cardImage: { productImg },
+  cardImage: `https://picsum.photos/id/237/200/300`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'tertiaryBag',
   originalPrice: 300,
