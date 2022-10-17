@@ -16,7 +16,7 @@ const CardPrimary: React.FC<cardType> = ({
       <img
         src={cardImage}
         alt="primary-card-img"
-        className="w-full h-full object-contain object-center m-0 p-0 min-w-max"
+        className="w-full h-115 object-contain object-center m-0 p-0 "
       />
       <h2 className="text-lg font-medium text-charcoal leading-6 mt-0 mb-8">
         {cardLabel}

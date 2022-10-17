@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const PrimaryCard = Template.bind({});
 PrimaryCard.args = {
-  cardImage: `https://picsum.photos/id/237/200/300`,
+  cardImage: `https://picsum.photos/id/237/900/500`,
   cardLabel: 'Fruits & Vegetables',
   variant: 'primary',
 };
