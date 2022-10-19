@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Icon from './Icon';
-import { HomeIcon, DashIcon, ArrowForwardIcon, BagIcon } from '../iconLibrary';
+import { HomeIcon } from '../iconLibrary';
 
 describe('Icon', () => {
   it('renders the component', () => {
