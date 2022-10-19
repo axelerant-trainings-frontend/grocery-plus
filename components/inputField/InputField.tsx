@@ -48,8 +48,8 @@ function InputField({ label, variant, placeholder, icon }: InputModel) {
             </div>
           ) : icon == 'both' ? (
             <>
-              <div className="flex justify-between absolute mt-1 px-5">
-                <div className="w-312 flex justify-between">
+              <div className="absolute mt-1 flex justify-between px-5">
+                <div className="flex w-312 justify-between">
                   <Icon
                     variant="charcoal"
                     icon={iconLeft}
@@ -76,7 +76,7 @@ function InputField({ label, variant, placeholder, icon }: InputModel) {
                 ? `${classes}` + ' ' + `${inputType}`
                 : icon == 'both'
                 ? `${classes}` + ' ' + `${inputType}` + ' ' + 'pt-18 pl-60'
-                : 'text-3xl w-343 h-52 rounded-xs bg-gray-light px-5 ' +
+                : 'h-52 w-343 rounded-xs bg-gray-light px-5 text-3xl ' +
                   ' ' +
                   `${inputType}`
             }
