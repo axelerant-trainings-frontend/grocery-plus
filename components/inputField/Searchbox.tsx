@@ -7,7 +7,7 @@ function Searchbox({ label, placeholder, variant }: SearchboxModel) {
   return (
     <>
       {variant == 'active' ? (
-        <label className="text-md text-red-primary pl-60 absolute mt-7 leading-xs">
+        <label className="absolute mt-7 pl-60 text-md leading-xs text-red-primary">
           {label}
         </label>
       ) : (
@@ -17,8 +17,8 @@ function Searchbox({ label, placeholder, variant }: SearchboxModel) {
         data-testid="searchbox"
         className={
           variant == 'active'
-            ? 'flex items-center active'
-            : 'flex items-center inactive'
+            ? 'active flex items-center'
+            : 'inactive flex items-center'
         }
       >
         <Icon
@@ -33,7 +33,7 @@ function Searchbox({ label, placeholder, variant }: SearchboxModel) {
             variant == 'active'
               ? `${classes}` +
                 ' ' +
-                'pt-18 border-red-primary border-b-2 active'
+                'active border-b-2 border-red-primary pt-18'
               : `${classes}` + ' ' + 'inactive'
           }
           type="search"
