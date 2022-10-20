@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Thumbs } from 'swiper';
+import productGalleryType from '../../@types/ProductGallery.types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-const ProductGallery = ({ images }) => {
+const ProductGallery: React.FC<productGalleryType> = ({
+  productImages,
+}: productGalleryType) => {
   const [activeThumb, setActiveThumb] = useState<SwiperCore>();
   return (
     <>
@@ -19,8 +22,8 @@ const ProductGallery = ({ images }) => {
         }}
         className="h-308 w-294 rounded-sm"
       >
-        {images &&
-          images.map((item, index) => (
+        {productImages &&
+          productImages.map((item, index) => (
             <SwiperSlide key={index} className="relative overflow-hidden">
               <img
                 src={item}
@@ -36,11 +39,11 @@ const ProductGallery = ({ images }) => {
         spaceBetween={10}
         slidesPerView={4}
         modules={[Thumbs]}
-        className="-left-[4px] mt-52"
+        className="mt-52 w-[338px]"
       >
-        {images &&
-          images.map((item, index) => (
-            <SwiperSlide key={index} className="!mx-15 !h-66 !w-66 rounded-xxs">
+        {productImages &&
+          productImages.map((item, index) => (
+            <SwiperSlide key={index} className="!mx-10 !h-66 !w-66 rounded-xxs">
               <img
                 src={item}
                 alt="product gallery thumbnail"
