@@ -1,5 +1,5 @@
 export type AddressType = {
-  variant: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary' | 'tertiary';
   labelText?: string;
   address: string;
 };

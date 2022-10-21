@@ -12,7 +12,7 @@ describe('location', () => {
     render(<Location variant="primary" address="Test data" />);
     const location = screen.getByTestId('location');
     expect(location).toHaveClass(
-      'flex items-center bg-flashWhite max-w-sm px-16 h-48',
+      'flex items-center bg-flashWhite max-w-sm px-16',
     );
   });
 
@@ -20,5 +20,10 @@ describe('location', () => {
     render(<Location variant="secondary" address="Test data" />);
     const location = screen.getByTestId('location');
     expect(location).toHaveClass('py-12 rounded-full bg-blue-primary px-15');
+  });
+  it('renders the component based on variant secondary', () => {
+    render(<Location variant="tertiary" address="Test data" />);
+    const location = screen.getByTestId('location');
+    expect(location).toHaveClass('py-px-22 h-85 rounded-lg bg-light-off');
   });
 });

@@ -23,3 +23,8 @@ AddressSecondary.args = {
   variant: 'secondary',
   address: 'Floor 4, Wakil Tower,Ta 131 Gulshan Badda Link Road',
 };
+export const PaymentMethod = Template.bind({});
+PaymentMethod.args = {
+  variant: 'tertiary',
+  address: 'Tap Here to select your Payment Method',
+};
