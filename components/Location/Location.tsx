@@ -11,11 +11,11 @@ const Location = ({ variant, address, labelText }: AddressType) => {
   if (variant === 'primary') {
     return (
       <div data-testid="location" className={classes}>
-        <div className="py-12 rounded-full bg-green-primary px-15">
+        <div className="rounded-full bg-green-primary py-12 px-15">
           <Icon icon={LocationIcon} variant="white" height="20" width="14" />
         </div>
 
-        <div className="flex flex-col ml-left ml-11">
+        <div className="ml-left ml-11 flex flex-col">
           <span className={labelClasses}>{labelText}</span>
           <span className={addressClasses}>{address}</span>
         </div>
@@ -35,12 +35,12 @@ const Location = ({ variant, address, labelText }: AddressType) => {
       <div className={classes}>
         <div
           data-testid="location"
-          className="py-12 rounded-full bg-blue-primary px-15"
+          className="rounded-full bg-blue-primary py-12 px-15"
         >
           <Icon icon={LocationIcon} variant="charcoal" height="20" width="14" />
         </div>
 
-        <div className="flex flex-col w-64 ml-left ml-11">
+        <div className="ml-left ml-11 flex w-64 flex-col">
           <span className={addressClasses}>{address}</span>
         </div>
       </div>
