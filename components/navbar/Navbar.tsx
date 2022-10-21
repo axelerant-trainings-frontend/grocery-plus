@@ -32,7 +32,7 @@ const defaultLinks: NavbarLink[] = [
 
 function Navbar({ links = defaultLinks }: NavbarModel) {
   return (
-    <div className="flex pt-20 justify-around items-center bg-white-regular rounded-t-xl m-10 shadow-primary max-w-screen-sm h-116 mt-10">
+    <div className="bg-white-regular mt-10 flex h-116 max-w-screen-sm items-center justify-around rounded-t-xl pt-20 shadow-primary">
       {links.map((item) => (
         <a title={item.linkTitle} key={item.title} href={item.link}>
           <Icon
