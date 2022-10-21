@@ -17,33 +17,33 @@ describe('Test Button component', () => {
   it('renders the component based on variant primary', () => {
     render(<Button variant="primary" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-green-primary h-12');
+    expect(button).toHaveClass('bg-green-primary');
   });
 
   it('renders the component based on variant primary-small', () => {
     render(<Button variant="primary-small" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-green-primary h-9');
+    expect(button).toHaveClass('bg-green-primary');
   });
   it('renders the component based on variant secondary', () => {
     render(<Button variant="secondary" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-red-primary h-12');
+    expect(button).toHaveClass('bg-red-primary');
   });
   it('renders the component based on variant secondary-small', () => {
     render(<Button variant="secondary-small" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-red-primary h-9');
+    expect(button).toHaveClass('bg-red-primary');
   });
   it('renders the component based on variant tertiary', () => {
     render(<Button variant="tertiary" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-light-off h-12');
+    expect(button).toHaveClass('bg-light-off');
   });
   it('renders the component based on variant tertiary-small', () => {
     render(<Button variant="tertiary-small" text="Test data" />);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('bg-light-off h-9');
+    expect(button).toHaveClass('bg-light-off');
   });
 
   it('add class on onClick', () => {
