@@ -35,6 +35,7 @@ module.exports = {
         54: '54px',
         56: '56px',
         60: '60px',
+        85: '85px',
         103: '103px',
         115: '115px',
         116: '116px',
@@ -84,7 +85,7 @@ module.exports = {
       },
       colors: {
         blue: {
-          primary: 'rgba(35, 108, 217, 1)',
+          primary: 'rgba(35, 108, 217, 0.12)',
         },
         green: {
           primary: 'rgba(135, 221, 57, 1)',
