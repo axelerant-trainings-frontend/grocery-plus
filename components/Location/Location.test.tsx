@@ -11,9 +11,7 @@ describe('location', () => {
   it('renders the component based on variant primary', () => {
     render(<Location variant="primary" address="Test data" />);
     const location = screen.getByTestId('location');
-    expect(location).toHaveClass(
-      'flex items-center bg-flashWhite max-w-sm px-16',
-    );
+    expect(location).toHaveClass('flex items-center max-w-sm px-16');
   });
 
   it('renders the component based on variant secondary', () => {

@@ -6,7 +6,7 @@ import { AttachMoneyIcon } from '../iconLibrary';
 import Icon from '../Icon/Icon';
 
 const Location = ({ variant, address, labelText }: AddressType) => {
-  const classes = 'flex items-center bg-flashWhite max-w-sm px-16';
+  const classes = 'flex items-center max-w-sm px-16';
   const labelClasses = 'text-charcoal text-sm';
   const addressClasses = 'text-xl text-charcoal';
   if (variant === 'primary') {
