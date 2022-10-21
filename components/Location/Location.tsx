@@ -58,8 +58,7 @@ const Location = ({ variant, address, labelText }: AddressType) => {
         </div>
 
         <div className="ml-left ml-11 flex flex-col">
-          <span className={labelClasses}>{labelText}</span>
-          <span className={addressClasses}>{address}</span>
+          <span className={`pr-[70px] ${addressClasses}`}>{address}</span>
         </div>
 
         <div className="ml-auto">
