@@ -24,7 +24,7 @@ const Cart = () => {
       <h1 className="mb-3 text-xl">Our Cart</h1>
 
       <h1>Total: {total}</h1>
-      <ul className="flex mb-4 flex-col pl-0">
+      <ul className="mb-4 flex flex-col pl-0">
         {cartItems.map((cartItem, index) => {
           return (
             <Card
