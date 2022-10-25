@@ -38,33 +38,33 @@ const CardTertiary: React.FC<cardType> = ({
         variant == 'tertiaryBag' ? 'tertiaryBag-card' : 'tertiarySearch-card'
       }`}
     >
-      <div className="tertiary-card-img-container w-115 h-121 shrink-0 grow-0 bg-white rounded-sm relative">
+      <div className="tertiary-card-img-container relative h-121 w-115 shrink-0 grow-0 rounded-sm bg-white">
         <img
           src={cardImage}
-          className="w-full h-full object-contain object-center m-0 p-0 min-w-full"
+          className="m-0 h-full w-full min-w-full object-contain object-center p-0"
           alt="quaternary-card-img"
         />
         {discountAmount !== undefined && (
           <DiscountLabel discountAmount={discountAmount!} />
         )}
       </div>
-      <div className="quaternary-card-content-container pl-17 grow">
-        <h2 className="text-3xl font-medium text-charcoal leading-6 mt-0 mb-8">
+      <div className="quaternary-card-content-container grow pl-17">
+        <h2 className="mt-0 mb-8 text-3xl font-medium leading-6 text-charcoal">
           {cardLabel}
         </h2>
-        <div className="flex justify-between items-end">
+        <div className="flex items-end justify-between">
           <div className="price flex flex-col">
             {discountAmount !== undefined ? (
               <>
-                <span className="old-price line-through text-md text-gray-semiDarkish font-semibold">
+                <span className="old-price text-md font-semibold text-gray-semiDarkish line-through">
                   ৳{originalPrice}
                 </span>
-                <span className="final-price text-4xl text-orange-light font-semibold">
+                <span className="final-price text-4xl font-semibold text-orange-light">
                   ৳{finalPrice}
                 </span>
               </>
             ) : (
-              <span className="final-price text-4xl text-orange-light font-semibold">
+              <span className="final-price text-4xl font-semibold text-orange-light">
                 ৳{originalPrice}
               </span>
             )}
@@ -72,7 +72,7 @@ const CardTertiary: React.FC<cardType> = ({
           <div className="quantity-add">
             {variant == 'tertiarySearch' && (
               <button
-                className="bag-btn flex w-89 h-35 bg-green-secondary items-center justify-center rounded-xxs"
+                className="bag-btn flex h-35 w-89 items-center justify-center rounded-xxs bg-green-secondary"
                 onClick={() => alert('should redirect to cart page.')}
               >
                 <Icon
@@ -90,7 +90,7 @@ const CardTertiary: React.FC<cardType> = ({
             {variant == 'tertiaryBag' && (
               <div className="flex">
                 <button
-                  className="bag-btn flex w-35 h-35 bg-red-primary items-center justify-center rounded-xxs"
+                  className="bag-btn flex h-35 w-35 items-center justify-center rounded-xxs bg-red-primary"
                   data-testid="decrement-btn-card"
                   onClick={() => cartDecrement}
                 >
@@ -107,11 +107,11 @@ const CardTertiary: React.FC<cardType> = ({
                 <input
                   type="text"
                   value={count}
-                  className="w-52 text-center bg-transparent"
+                  className="w-52 bg-transparent text-center"
                   readOnly
                 />
                 <button
-                  className="bag-btn flex w-35 h-35 bg-green-secondary items-center justify-center rounded-xxs"
+                  className="bag-btn flex h-35 w-35 items-center justify-center rounded-xxs bg-green-secondary"
                   onClick={() => cartIncrement}
                   data-testid="increment-btn-card"
                 >
