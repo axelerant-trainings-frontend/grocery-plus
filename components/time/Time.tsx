@@ -9,10 +9,10 @@ function Time({ start, end, variant }: TimeModel) {
     <button
       className={
         variant == 'active'
-          ? 'text-red-primary text-md leading-xs border-red-primary border-2' +
+          ? 'border-2 border-green-secondary text-md leading-xs text-green-secondary' +
             ' ' +
             extraClasses
-          : 'text-charcoal text-md' + ' ' + extraClasses
+          : 'text-md text-charcoal' + ' ' + extraClasses
       }
     >
       {start} - {end}

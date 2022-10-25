@@ -22,6 +22,16 @@ function Heading({ title, variant, extraClasses, size }: HeadingModel) {
   if (variant == 'large-bold') {
     classes = 'font-bold text-5xl leading-4xl';
   }
+
+  if (variant == 'small-medium') {
+    classes = 'font-medium text-3xl leading-2xl';
+  }
+  if (variant == 'medium-medium') {
+    classes = 'font-medium text-4xl leading-3xl';
+  }
+  if (variant == 'large-medium') {
+    classes = 'font-medium text-5xl leading-4xl';
+  }
   return (
     <Tag data-testid="heading" className={classes + ' ' + extraClasses}>
       {title}

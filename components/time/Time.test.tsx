@@ -7,7 +7,7 @@ describe('Test Time component', () => {
     const endTime = '10AM';
     render(<Time start={startTime} end={endTime} variant="active" />);
     const time = screen.getByRole('button');
-    expect(time).toHaveClass('text-red-primary');
+    expect(time).toHaveClass('text-green-secondary');
   });
 
   it('renders the component and checks for the specific class', () => {
