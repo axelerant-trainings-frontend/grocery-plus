@@ -1,50 +1,52 @@
 import React from 'react';
 import { ButtonType } from '../../@types/button.types';
-import { SaveIcon } from '../iconLibrary';
 import Icon from '../Icon/Icon';
 
 const Button = ({
   variant,
   text,
-  iconLeft,
-  iconRight,
+  iconPosition,
   extraClasses,
+  icon,
   textClasses,
   onClick,
 }: ButtonType) => {
   let textColor = '';
   const defaultClasses =
-    'flex items-center w-full px-15 py-16 rounded-xs cursor-pointer';
+    'flex items-center px-15 py-16 rounded-xs cursor-pointer';
   let classes = defaultClasses;
 
   if (variant === 'primary') {
-    classes += ' bg-green-primary h-12';
+    classes += ' bg-green-primary';
+    textColor = 'text-white';
+  } else if (variant === 'primary-dark') {
+    classes += ' bg-green-secondary';
     textColor = 'text-white';
   } else if (variant === 'secondary') {
-    classes += ` bg-red-primary h-12`;
+    classes += ` bg-red-primary`;
     textColor = 'text-white';
   } else if (variant === 'tertiary') {
-    classes += ` bg-light-off h-12`;
+    classes += ` bg-light-off`;
     textColor = 'text-green-primary';
   }
   if (variant === 'primary-small') {
-    classes += ` bg-green-primary h-9`;
+    classes += ` bg-green-primary`;
     textColor = 'text-white';
   } else if (variant === 'secondary-small') {
-    classes += ` bg-red-primary h-9`;
+    classes += ` bg-red-primary`;
     textColor = 'text-white';
   } else if (variant === 'tertiary-small') {
-    classes += ` bg-light-off h-9`;
+    classes += ` bg-light-off`;
     textColor = 'text-green-primary';
   }
   return (
     <button className={classes + ' ' + extraClasses} onClick={onClick}>
-      {iconLeft && (
-        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+      {iconPosition == 'left' && (
+        <Icon icon={icon!} variant="white" height="20" width="20" />
       )}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
-      {iconRight && (
-        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+      {iconPosition == 'right' && (
+        <Icon icon={icon!} variant="white" height="20" width="20" />
       )}
     </button>
   );

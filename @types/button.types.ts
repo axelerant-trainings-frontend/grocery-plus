@@ -1,8 +1,14 @@
 export type ButtonType = {
-  variant: 'primary' | 'secondary' | 'tertiary' |'primary-small' | 'secondary-small' |'tertiary-small';
+  variant:
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'primary-small'
+    | 'secondary-small'
+    | 'tertiary-small'
+    | 'primary-dark';
   text: string;
-  iconLeft?: string | boolean;
-  iconRight?: string | boolean;
+  iconPosition?: 'left' | 'right';
   extraClasses?: string;
   icon?: string;
   textClasses?: string;

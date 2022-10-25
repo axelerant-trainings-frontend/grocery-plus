@@ -34,10 +34,9 @@ module.exports = {
         48: '48px',
         52: '52px',
         54: '54px',
-        55: '55px',
         56: '56px',
         60: '60px',
-        89: '89px',
+        85: '85px',
         103: '103px',
         115: '115px',
         116: '116px',
@@ -87,7 +86,7 @@ module.exports = {
       },
       colors: {
         blue: {
-          primary: 'rgba(35, 108, 217, 1)',
+          primary: 'rgba(35, 108, 217, 0.12)',
         },
         green: {
           primary: 'rgba(135, 221, 57, 1)',
@@ -102,7 +101,6 @@ module.exports = {
         },
         gray: {
           light: 'rgba(240, 241, 242, 1)',
-          semiDarkish: 'rgba(55, 71, 79, 0.54)',
           darkish: 'rgba(55, 71, 79, 0.72)',
         },
         light: {

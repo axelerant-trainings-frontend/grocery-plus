@@ -25,13 +25,20 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const PrimaryLeft = Template.bind({});
+PrimaryLeft.args = {
   variant: 'primary',
   text: 'Click here',
-  iconLeft: true,
-  iconRight: true,
+  iconPosition: 'left',
   icon: SaveIcon,
-  extraClasses: '',
-  textClasses: '',
+  extraClasses: 'w-343',
+};
+
+export const PrimaryRight = Template.bind({});
+PrimaryRight.args = {
+  variant: 'primary',
+  text: 'Click here',
+  iconPosition: 'right',
+  icon: SaveIcon,
+  extraClasses: 'w-343',
 };
