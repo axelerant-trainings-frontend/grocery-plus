@@ -53,7 +53,7 @@ const Cart = () => {
         variant="tertiary"
         text="Add More Product"
         extraClasses="w-343 mt-25 mx-auto"
-        textClasses='!text-green-secondary'
+        textClasses="!text-green-secondary"
       />
       <Heading
         title="Expected Date & TIme"
@@ -84,7 +84,7 @@ const Cart = () => {
           <Time start="11 AM" end="12 PM" variant="inactive" />
         </div>
       </div>
-      <div className="mx-auto flex w-343 justify-between mt-35">
+      <div className="mx-auto mt-35 flex w-343 justify-between">
         <Heading
           title="Delivery Location"
           extraClasses="mt-25 ml-0 text-charcoal"
