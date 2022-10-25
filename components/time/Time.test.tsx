@@ -9,7 +9,7 @@ describe('Test Time component', () => {
     const time = screen.getByRole('button');
     expect(time).toHaveClass('text-red-primary');
   });
-  
+
   it('renders the component and checks for the specific class', () => {
     const startTime = '10PM';
     const endTime = '10AM';
