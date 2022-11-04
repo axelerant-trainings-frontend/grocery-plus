@@ -1,6 +1,5 @@
 import React from 'react';
 import { ButtonType } from '../../@types/button.types';
-import { SaveIcon } from '../iconLibrary';
 import Icon from '../Icon/Icon';
 
 const Button = ({
@@ -40,11 +39,11 @@ const Button = ({
   return (
     <button className={classes + ' ' + extraClasses} onClick={onClick}>
       {iconLeft && (
-        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+        <Icon icon={iconLeft} variant="white" height="20" width="20" />
       )}
       <span className={textColor + ' mx-auto ' + textClasses}>{text}</span>
       {iconRight && (
-        <Icon icon={SaveIcon} variant="white" height="20" width="20" />
+        <Icon icon={iconRight} variant="white" height="20" width="20" />
       )}
     </button>
   );

@@ -20,10 +20,19 @@
     "test:cy:start": "start-server-and-test dev 3000 test:cy:run"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@material-ui/core": "^4.12.4",
+    "@mui/material": "^5.10.10",
+    "@mui/x-date-pickers": "^5.0.5",
+    "@mui/x-date-pickers-pro": "^5.0.5",
     "@reduxjs/toolkit": "^1.8.5",
     "contentful": "^9.2.4",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.6",
     "next": "12.3.0",
     "react": "18.2.0",
+    "react-calendar": "^3.9.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2"
   },
@@ -46,6 +55,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
+    "@types/react-calendar": "^3.5.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "autoprefixer": "^10.4.11",
     "babel-loader": "^8.2.5",
